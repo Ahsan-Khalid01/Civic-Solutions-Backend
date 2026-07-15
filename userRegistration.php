@@ -33,7 +33,11 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
     $password=$data->password;
     $confirmPassword=$data->confirmPassword;
 
+
         $query = "INSERT INTO userregistartion (FullName, CNIC, DOB, Gender, Phone, Email, City, Area,Street , PostalCode, Password , ConfirmedPassword) VALUES ('$name', '$cnic', '$dob', '$gender', '$phone', '$email', '$city', '$area', '$address', '$postalCode', '$password', '$confirmedPassword')";
+
+       $query = "INSERT INTO userregistartion (FullName, CNIC, DOB, Gender, Phone, Email, City, Area,Street , PostalCode, Password , ConfirmedPassword) VALUES ('$name', '$cnic', '$dob', '$gender', '$phone', '$email', '$city', '$area', '$address', '$postalCode', '$password', '$confirmPassword')";
+
         $process_query = mysqli_query($conn, $query);
 
         if ($process_query) {

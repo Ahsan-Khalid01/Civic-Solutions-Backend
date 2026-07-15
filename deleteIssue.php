@@ -10,11 +10,11 @@ $data = json_decode($rawData);
 
 if(isset($data->id)) {
     $id = $data->id;
-    $query = "DELETE FROM department WHERE id = '$id'";
+    $query = "DELETE FROM issues WHERE id = '$id'";
     $process_query = mysqli_query($conn, $query);
 
     if ($process_query) {
-        echo json_encode(["success" => true, "message" => "Department deleted successfully."]);
+        echo json_encode(["success" => true, "message" => "Issue deleted successfully."]);
     } else {
         echo json_encode(["success" => false, "message" => "Delete failed: " . mysqli_error($conn)]);
     }
